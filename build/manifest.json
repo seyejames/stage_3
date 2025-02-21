@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "My Chrome Extension",
+  "short_name": "React App",
+  "version": "1.0",
+  "description": "A brief description of your extension",
+  "icons": {
+    "16": "favicon.ico",
+    "32": "favicon.ico",
+    "48": "icons/logo192.png",
+    "128": "icons/logo512.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "favicon.ico",
+      "48": "icons/logo192.png",
+      "128": "icons/logo512.png"
+    }
+  }
+}
